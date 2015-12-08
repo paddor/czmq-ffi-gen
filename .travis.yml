@@ -1,0 +1,12 @@
+language: ruby
+cache: bundler
+sudo: required
+rvm:
+  - 2.2.3
+    #  - rubinius
+    #  - jruby
+before_install:
+  - ci-scripts/install-libzmq
+  - ci-scripts/install-libczmq
+  - gem install bundler -v 1.10.6
+script: bundle exec rake spec

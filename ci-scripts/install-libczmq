@@ -1,0 +1,8 @@
+#!/bin/sh -x
+# vim: ft=sh
+set -e
+cd vendor/czmq &&
+./autogen.sh &&
+./configure &&
+make &&
+sudo make install
