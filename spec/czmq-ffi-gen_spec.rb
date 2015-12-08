@@ -38,7 +38,7 @@ main
     describe "when pointer nullified" do
       Given(:nullified_zconfig) { zconfig.__ptr_give_ref; zconfig } # nullifies pointer
       When(:result) { nullified_zconfig.name }
-      Then { result == Failure(CZMQ::FFI::DestroyedError) }
+      Then { result == Failure(CZMQ::FFI::Zconfig::DestroyedError) }
       And { nullified_zconfig.null? }
     end
 
