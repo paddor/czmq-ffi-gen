@@ -1,5 +1,5 @@
-[![Build Status on Travis CI](https://travis-ci.org/paddor/czmq-ffi-gen.svg?branch=master)](https://travis-ci.org/paddor/czmq-ffi-gen?branch=master)$
-[![Inline docs](http://inch-ci.org/github/paddor/czmq-ffi-gen.svg?branch=master&style=shields)](http://inch-ci.org/github/paddor/czmq-ffi-gen)$
+[![Build Status on Travis CI](https://travis-ci.org/paddor/czmq-ffi-gen.svg?branch=master)](https://travis-ci.org/paddor/czmq-ffi-gen?branch=master)
+[![Inline docs](http://inch-ci.org/github/paddor/czmq-ffi-gen.svg?branch=master&style=shields)](http://inch-ci.org/github/paddor/czmq-ffi-gen)
 
 # Generated CZMQ::FFI
 
