@@ -3,8 +3,8 @@ cache: bundler
 sudo: required
 rvm:
   - 2.2.3
-    #  - rubinius
-    #  - jruby
+  - rubinius
+  - jruby
 before_install:
   - ci-scripts/install-libzmq
   - ci-scripts/install-libczmq
