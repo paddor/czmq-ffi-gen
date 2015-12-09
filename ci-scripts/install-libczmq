@@ -2,8 +2,8 @@
 # vim: ft=sh
 set -e
 git submodule update --init -- vendor/czmq
-cd vendor/czmq &&
-./autogen.sh &&
-./configure &&
-make &&
+cd vendor/czmq
+./autogen.sh
+./configure
+make
 sudo make install
