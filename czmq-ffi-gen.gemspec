@@ -15,7 +15,13 @@ Gem::Specification.new do |spec|
   spec.license       = "ISC"
 
   # see http://stackoverflow.com/questions/357754/can-i-traverse-symlinked-directories-in-ruby-with-a-glob#2724048
-  spec.files         = Dir['lib/**{,/*/**}/*.rb'] # traverse symlinked directory
+  spec.files         = Dir['lib/**{,/*/**}/*.rb', # traverse symlinked directory
+                           'AUTHORS',
+                           'CHANGES.md',
+                           'Gemfile',
+                           'LICENSE',
+                           'README.md',
+                       ]
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
