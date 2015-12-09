@@ -9,7 +9,7 @@ _czmq-ffi-gen_ can be used as a base for a higher-level CZMQ binding like
 [CZTop](https://github.com/paddor/cztop). But of course you can use it for
 anything you want. :-)
 
-## Warnings
+## Caveats
 
 ### Not Ruby-like
 This is generated code. It is generated from the API models in CZMQ using
