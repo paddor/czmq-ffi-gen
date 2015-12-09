@@ -38,6 +38,20 @@ process will include all required source files directly within the gem.
 [http://www.rubydoc.info/gems/czmq-ffi-gen](http://www.rubydoc.info/gems/czmq-ffi-gen)
 for the API documentation.
 
+## Supported Rubies
+
+Tested with these:
+
+* Ruby 2.2.3
+* JRuby HEAD (>= 9.0.0.0)
+* Rubinius
+
+
+### Known NOT to work
+
+* JRuby 1.7.x
+  * doesn't work because of the use of the double splat operator (`**opts`)
+
 ## Installation
 
 This gem requires the presence of the CZMQ library, which in turn requires the
