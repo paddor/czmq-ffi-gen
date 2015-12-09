@@ -1,5 +1,8 @@
 # coding: utf-8
-require_relative 'lib/czmq-ffi-gen/gem_version'
+# NOTE: can't just use require_relative() here. JRuby doesn't like it.
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'czmq-ffi-gen/gem_version'
 
 Gem::Specification.new do |spec|
   spec.name          = "czmq-ffi-gen"
