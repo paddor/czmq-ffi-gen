@@ -11,7 +11,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/paddor/czmq-ffi-gen"
   spec.license       = "ISC"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  # see http://stackoverflow.com/questions/357754/can-i-traverse-symlinked-directories-in-ruby-with-a-glob#2724048
+  spec.files         = Dir['lib/**{,/*/**}/*.rb'] # traverse symlinked directory
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
