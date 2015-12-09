@@ -4,7 +4,7 @@ sudo: required
 rvm:
   - 2.2.3
   - rubinius
-  - jruby
+  - jruby-head
 before_install:
   - ci-scripts/install-libzmq
   - ci-scripts/install-libczmq
