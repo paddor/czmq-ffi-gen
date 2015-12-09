@@ -1,18 +1,57 @@
 [![Build Status on Travis CI](https://travis-ci.org/paddor/czmq-ffi-gen.svg?branch=master)](https://travis-ci.org/paddor/czmq-ffi-gen?branch=master)
-[![Inline docs](http://inch-ci.org/github/paddor/czmq-ffi-gen.svg?branch=master&style=shields)](http://inch-ci.org/github/paddor/czmq-ffi-gen)
+[![Dependency Status](https://gemnasium.com/paddor/czmq-ffi-gen.svg)](https://gemnasium.com/paddor/czmq-ffi-gen)
 
 # Generated CZMQ::FFI
 
-This is _czmq-ffi-gen_, the low-level Ruby FFI binding for
-[CZMQ](https://github.com/zeromq/czmq). It is generated from the API models in
-CZMQ using [zproject](https://github.com/zeromq/zproject). Its main purpose is
-to provide a base for the high-level CZMQ binding
-[CZTop](https://github.com/paddor/cztop), but of course you can use it for
-anything you want.
+This repository is used to package and release the Ruby gem _czmq-ffi-gen_, the
+low-level Ruby FFI binding for [CZMQ](https://github.com/zeromq/czmq).  The gem
+_czmq-ffi-gen_ can be used as a base for a higher-level CZMQ binding like
+[CZTop](https://github.com/paddor/cztop). But of course you can use it for
+anything you want. :-)
+
+## Warnings
+
+### Not Ruby-like
+This is generated code. It is generated from the API models in CZMQ using
+[zproject](https://github.com/zeromq/zproject). It doesn't feel like Ruby. It's
+not intended to be used directly. Instead, use
+[CZTop](https://github.com/paddor/cztop), or write your own wrapper for this
+library.
+
+### Generated code isn't actually in this repository
+The actual generated code lies in CZMQ, which is Git submodule of this
+repository, registered under `vendor/czmq`.
+
+So if you're not happy with any of the generated code, go have a closer look at
+CZMQ or zproject, which is used by CZMQ to generate the low-level binding.
+
+### API Documentation
+For that same reason, API documentation of unreleased code (directly off this
+repository), like
+[rubydoc.info/github/paddor/czmq-ffi-gen](http://www.rubydoc.info/github/paddor/czmq-ffi-gen)
+**does NOT include any of the generated code**. _Rubydoc.info_ doesn't check
+out Git submodules as part of its documentation procedure. However, API
+documentation of the **released gem should work** just fine, as the gem release
+process will include all required source files directly within the gem.
+
+**Check out**
+[http://www.rubydoc.info/gems/czmq-ffi-gen](http://www.rubydoc.info/gems/czmq-ffi-gen)
+for the API documentation.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+This gem requires the presence of the CZMQ library, which in turn requires the
+ZMQ library. For **security mechanisms** like CURVE, you'll need
+[libsodium](https://github.com/jedisct1/libsodium).
+
+On OSX using homebrew, run:
+
+    $ brew install libsodium czmq
+
+If you're running Linux, go check [this page](http://zeromq.org/distro:_start)
+to get more help. Make sure to install CZMQ, not only ZMQ.
+
+To then use this gem, add this line to your application's Gemfile:
 
 ```ruby
 gem 'czmq-ffi-gen'
@@ -28,15 +67,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Check out [CZTop](https://github.com/paddor/cztop) or the API documentation to
+see how this project can be used. :-)
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+After checking out the repo, run `bin/setup` to install dependencies. Then, run
+`rake spec` to run the tests. You can also run `bin/console` for an interactive
+prompt that will allow you to experiment.
 
 ## License
 
-The gem is available as open source under the terms of the [ISC License](http://opensource.org/licenses/ISC).
-See the [LICENSE](https://github.com/paddor/cztop/blob/master/LICENSE) file.
+The gem is available as open source under the terms of the [ISC
+License](http://opensource.org/licenses/ISC).  See the
+[LICENSE](https://github.com/paddor/cztop/blob/master/LICENSE) file.
