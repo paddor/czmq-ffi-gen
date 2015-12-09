@@ -1,6 +1,7 @@
 #!/bin/sh -x
 # vim: ft=sh
 set -e
+git submodule update --init -- vendor/czmq
 cd vendor/czmq &&
 ./autogen.sh &&
 ./configure &&
