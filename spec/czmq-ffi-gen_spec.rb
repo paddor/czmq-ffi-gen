@@ -35,17 +35,23 @@ main
     let(:zconfig) { described_class.str_load(config_contents) }
 
     # This is supposed to be a general test, not specific to Zconfig.
-    describe "when pointer nullified" do
-      Given(:nullified_zconfig) { zconfig.__ptr_give_ref; zconfig } # nullifies pointer
-      When(:result) { nullified_zconfig.name }
-      Then { result == Failure(CZMQ::FFI::Zconfig::DestroyedError) }
-      And { nullified_zconfig.null? }
-    end
+    describe "#__ptr_give_ref" do # getting pointer by reference
+      let!(:ptr_ref) { zconfig.__ptr_give_ref } # nullifies pointer
 
-    describe "getting pointer by reference" do
-      When(:ptr_ref) { zconfig.__ptr_give_ref } # nullifies pointer
-      Then { zconfig.null? }
-      And { ptr_ref.kind_of?(FFI::Pointer) && !ptr_ref.null? }
+      it "returns pointer" do
+        assert_kind_of FFI::Pointer, ptr_ref
+        refute_operator ptr_ref, :null?
+      end
+
+      it "nullifies pointer" do
+        assert_operator zconfig, :null?
+      end
+
+      it "raises when using nullified pointer" do
+        assert_raises(CZMQ::FFI::Zconfig::DestroyedError) do
+          zconfig.name
+        end
+      end
     end
   end
 end
