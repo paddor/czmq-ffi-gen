@@ -7,5 +7,15 @@ describe CZMQ::FFI::Zsock do
     let(:zobj) { described_class.new_pair(endpoint) }
     let(:use_pointer) { zobj.endpoint }
     include_examples "a zclass"
+
+    it "creates REP Zsock" do
+      sock = described_class.new_rep(endpoint)
+      refute_operator sock, :null?
+    end
+
+    it "creates REQ Zsock" do
+      sock = described_class.new_req(endpoint)
+      refute_operator sock, :null?
+    end
   end
 end
