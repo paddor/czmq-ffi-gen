@@ -1,6 +1,8 @@
 require_relative "spec_helper"
 
 describe CZMQ::FFI::Zconfig do
+  include_examples "a zclass"
+
   context "with a zconfig" do
     let(:config_contents) do
       <<-EOF
@@ -22,6 +24,6 @@ main
 
     let(:zobj) { described_class.str_load(config_contents) }
     let(:use_pointer) { zobj.name }
-    include_examples "a zclass"
+    include_examples "a zobj"
   end
 end
