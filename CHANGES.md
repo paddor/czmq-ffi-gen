@@ -1,3 +1,8 @@
+0.2.1 (12/12/2015)
+-----
+* upgrade CZMQ low-level binding to
+  - allow passing a null pointer (nil) for an FFI :string parameter
+
 0.2.0 (12/10/2015)
 -----
 * using new CZMQ version which
