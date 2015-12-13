@@ -28,5 +28,38 @@ RSpec.shared_examples "a zobj" do
         end
       end
     end
+
+    describe "#__ptr" do
+      it "exists" do
+        assert_operator zobj, :respond_to?, :__ptr
+      end
+
+    end
+    describe "#to_ptr" do
+      it "exists" do
+        assert_operator zobj, :respond_to?, :to_ptr
+      end
+
+      it "is an alias of #__ptr" do
+        assert_equal zobj.method(:__ptr), zobj.method(:to_ptr)
+      end
+    end
+    describe "#__undef_finalizer" do
+      it "exists" do
+        assert_operator zobj, :respond_to?, :__undef_finalizer
+      end
+
+    end
+    describe ".create_finalizer_for" do
+      it "exists" do
+        assert_operator described_class, :respond_to?, :create_finalizer_for
+      end
+
+    end
+    describe "#null?" do
+      it "exists" do
+        assert_operator zobj, :respond_to?, :null?
+      end
+    end
   end
 end
