@@ -1,3 +1,8 @@
+0.3.0 (12/15/2015)
+-----
+* upgrade CZMQ low-level binding to
+  - add Zcert#unset_meta
+
 0.2.1 (12/12/2015)
 -----
 * upgrade CZMQ low-level binding to
