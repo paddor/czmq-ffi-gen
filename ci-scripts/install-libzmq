@@ -1,7 +1,9 @@
 #!/bin/sh -x
 # vim: ft=sh
 set -e
-REPO_SOURCE="deb http://us.archive.ubuntu.com/ubuntu/ trusty main universe"
-sudo add-apt-repository "$REPO_SOURCE"
-sudo apt-get update -qq
-sudo apt-get install libzmq3-dev
+git clone https://github.com/zeromq/zeromq4-1
+cd zeromq4-1
+./autogen.sh
+./configure
+make
+sudo make install
