@@ -56,11 +56,13 @@ Tested with these:
 
 This gem requires the presence of the CZMQ library, which in turn requires the
 ZMQ library. For **security mechanisms** like CURVE, you'll need
-[libsodium](https://github.com/jedisct1/libsodium).
+[libsodium](https://github.com/jedisct1/libsodium) and at least ZMQ 4.0.
 
 On OSX using homebrew, run:
 
-    $ brew install libsodium czmq
+    $ brew install libsodium
+    $ brew install zmq --with-libsodium
+    $ brew install czmq
 
 If you're running Linux, go check [this page](http://zeromq.org/distro:_start)
 to get more help. Make sure to install CZMQ, not only ZMQ.
