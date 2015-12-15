@@ -7,3 +7,4 @@ cd vendor/czmq
 ./configure
 make
 sudo make install
+sudo ldconfig

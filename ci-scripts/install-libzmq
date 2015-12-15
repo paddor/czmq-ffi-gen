@@ -7,3 +7,4 @@ cd zeromq4-1
 ./configure
 make
 sudo make install
+sudo ldconfig
