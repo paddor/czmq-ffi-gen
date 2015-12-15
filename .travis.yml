@@ -6,6 +6,7 @@ rvm:
   - rubinius
   - jruby-head
 before_install:
+  - ci-scripts/install-libsodium
   - ci-scripts/install-libzmq
   - ci-scripts/install-libczmq
   - gem install bundler -v 1.10.6
