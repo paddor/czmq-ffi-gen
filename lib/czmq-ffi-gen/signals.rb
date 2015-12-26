@@ -8,10 +8,19 @@ module CZMQ
     module Signals
       module_function
 
+      @default_handling_disabled = false
+
       # Disables default SIGINT/SIGTERM handling in CZMQ.
       # @return [void]
       def disable_default_handling
-        CZMQ::FFI.zsys_handler_set(nil)
+        FFI.zsys_handler_set(nil)
+        @default_handling_disabled = true
+      end
+
+      # @return [Boolean] whether the CZMQ's default signal handling has been
+      #   disabled
+      def default_handling_disabled?
+        @default_handling_disabled
       end
     end
   end
