@@ -1,3 +1,9 @@
+next
+-----
+* upgrade CZMQ low-level binding to
+  - add Zproc.has_curve
+* add basic specs for Zproc
+
 0.3.0 (12/15/2015)
 -----
 * upgrade CZMQ low-level binding to
