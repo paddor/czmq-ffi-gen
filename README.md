@@ -40,9 +40,9 @@ for the API documentation.
 
 ## Supported Rubies
 
-Tested with these:
+Tested on CI with these:
 
-* Ruby 2.2.3
+* Ruby 2.2.4
 * JRuby HEAD (>= 9.0.0.0)
 * Rubinius
 
