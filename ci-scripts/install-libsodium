@@ -1,7 +1,7 @@
 #!/bin/sh -x
 set -e
 
-SODIUM_VERSION=1.0.7
+SODIUM_VERSION=1.0.8
 SODIUM_URL=https://github.com/jedisct1/libsodium/releases/download/${SODIUM_VERSION}/libsodium-${SODIUM_VERSION}.tar.gz
 cd `mktemp -d /tmp/install-libsodium-XXXXXX`
 wget $SODIUM_URL
