@@ -1,3 +1,8 @@
+0.4.1 (01/06/2016)
+-----
+* upgrade CZMQ low-level binding to
+  - fix zbeacon so it doesn't close STDIN
+
 0.4.0 (12/26/2015)
 -----
 * upgrade CZMQ low-level binding to
