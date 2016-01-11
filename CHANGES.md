@@ -1,3 +1,8 @@
+0.5.0 (xx/xx/2016)
+-----
+* add CZMQ::FFI::ZMQ
+  - only to get the last ZMQ error (::error)
+
 0.4.1 (01/06/2016)
 -----
 * upgrade CZMQ low-level binding to
