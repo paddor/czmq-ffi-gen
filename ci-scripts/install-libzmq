@@ -1,8 +1,8 @@
 #!/bin/sh -x
 # vim: ft=sh
 set -e
-git clone https://github.com/zeromq/zeromq4-1
-cd zeromq4-1
+git clone https://github.com/zeromq/libzmq
+cd libzmq
 ./autogen.sh
 ./configure
 make
