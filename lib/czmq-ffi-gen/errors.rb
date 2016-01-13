@@ -1,5 +1,5 @@
 # This is only used to be able to read get the last ZMQ error.
-module CZMQ::FFI::ZMQ
+module CZMQ::FFI::Errors
   extend ::FFI::Library
 
   lib_name = 'libzmq'
@@ -14,8 +14,13 @@ module CZMQ::FFI::ZMQ
   attach_function :zmq_strerror, [:int], :string, **opts
   attach_function :zmq_errno, [], :int, **opts
 
+  # @return [String] error code of the last (ZMQ) error
+  def self.errno
+    zmq_errno
+  end
+
   # @return [String] the string representation of the last (ZMQ) error
-  def self.error
+  def self.strerror
     zmq_strerror(zmq_errno)
   end
 end
