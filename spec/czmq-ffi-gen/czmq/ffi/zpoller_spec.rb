@@ -5,7 +5,7 @@ describe CZMQ::FFI::Zpoller do
 
   context "with a zobj" do
     let(:zsock) { CZMQ::FFI::Zsock.new_req(nil) }
-    let(:zobj) { described_class.new(zsock) }
+    let(:zobj) { described_class.new(zsock, :pointer, nil) }
     let(:use_pointer) { zobj.expired }
     include_examples "a zobj"
   end
