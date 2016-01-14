@@ -1,7 +1,11 @@
-0.5.0 (xx/xx/2016)
+0.5.0 (01/14/2016)
 -----
-* add CZMQ::FFI::ZMQ
-  - only to get the last ZMQ error (::error)
+* add CZMQ::FFI::Errors
+  - hand-written code to interact with libzmq
+  - .errno returns error code of last (ZMQ) error
+  - .strerror returns string representation of last (ZMQ) error
+* upgrade CZMQ low-level binding to
+  - add Zchunk
 
 0.4.1 (01/06/2016)
 -----
