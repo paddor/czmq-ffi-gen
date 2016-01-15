@@ -1,3 +1,8 @@
+0.6.0 (01/15/2016)
+-----
+* upgrade CZMQ low-level binding to
+  - add support for ZMTP 3.1 heartbeat options
+
 0.5.0 (01/14/2016)
 -----
 * add CZMQ::FFI::Errors
