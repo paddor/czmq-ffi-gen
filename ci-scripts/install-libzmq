@@ -4,6 +4,8 @@ set -e
 mkdir -p ~/src
 cd ~/src
 env
+ls -la $LD_LIBRARY_PATH
+ls -la $LD_RUN_PATH
 
 git clone https://github.com/zeromq/libzmq
 cd libzmq
