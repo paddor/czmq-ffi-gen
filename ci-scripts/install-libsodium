@@ -1,27 +1,14 @@
 #!/bin/sh -x
 # vim: ft=sh
 set -e
-pwd
-cd vendor
 
 SODIUM_VERSION=1.0.8
 SODIUM_URL=https://github.com/jedisct1/libsodium/releases/download/${SODIUM_VERSION}/libsodium-${SODIUM_VERSION}.tar.gz
 
-src="libsodium-${SODIUM_VERSION}"
-
-if [ -e "$src" ]
-then
-	echo "Using libsodium $SODIUM_VERSION from cache."
-	cd "$src"
-else
-	echo "Libsodium is not in cache."
-	echo "Building libsodium $SODIUM_VERSION from scratch ..."
-	wget $SODIUM_URL
-	tar -xvzf libsodium-${SODIUM_VERSION}.tar.gz
-	cd "$src"
-	./configure
-	make
-fi
-
+wget $SODIUM_URL
+tar -xvzf libsodium-${SODIUM_VERSION}.tar.gz
+cd "libsodium-${SODIUM_VERSION}"
+./configure
+make
 sudo make install
 sudo ldconfig

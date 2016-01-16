@@ -1,22 +1,9 @@
 #!/bin/sh -x
 # vim: ft=sh
 set -e
-pwd
-env
-ls -la /usr/lib/ccache
-cd vendor
 
-if [ -e libzmq ]
-then
-	echo "Using cached libzmq repo from cache."
-	cd libzmq
-	git pull origin master
-else
-	echo "Libzmq repo not in cache. Cloning ..."
-	git clone https://github.com/zeromq/libzmq
-	cd libzmq
-fi
-
+git clone https://github.com/zeromq/libzmq
+cd libzmq
 ./autogen.sh
 ./configure
 make
