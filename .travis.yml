@@ -10,6 +10,7 @@ rvm:
   - rubinius
   - jruby-head
 before_install:
+  - PATH="/usr/lib/ccache:$PATH" # enable ccache
   - ci-scripts/install-libsodium
   - ci-scripts/install-libzmq
   - ci-scripts/install-libczmq
