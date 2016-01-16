@@ -3,7 +3,6 @@ cache: bundler
 sudo: required
 cache:
   directories:
-    - vendor
     - $HOME/.ccache
 rvm:
   - 2.3.0
