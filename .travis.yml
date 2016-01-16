@@ -6,7 +6,7 @@ cache:
     - $HOME/.bundle
 rvm:
   - 2.3.0
-  - rubinius
+  - rbx
   - jruby-head
 matrix:
   allow_failures:
