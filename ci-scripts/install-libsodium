@@ -3,7 +3,6 @@
 set -e
 mkdir -p ~/src
 cd ~/src
-env
 
 # always get latest release
 SODIUM_VERSION=$(basename `wget -O /dev/null --max-redirect=1 https://github.com/jedisct1/libsodium/releases/latest 2>&1 | grep '\[following\]'| cut -d" " -f2`)

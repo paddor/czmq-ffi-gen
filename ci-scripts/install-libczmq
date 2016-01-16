@@ -1,7 +1,6 @@
 #!/bin/sh -x
 # vim: ft=sh
 set -e
-env
 
 git submodule update --init -- vendor/czmq
 cd vendor/czmq

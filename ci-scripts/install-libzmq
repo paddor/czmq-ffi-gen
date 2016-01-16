@@ -1,10 +1,8 @@
 #!/bin/sh -x
 # vim: ft=sh
 set -e
-ls -la ~/lib/pkgconfig
 mkdir -p ~/src
 cd ~/src
-env
 
 git clone https://github.com/zeromq/libzmq
 cd libzmq
