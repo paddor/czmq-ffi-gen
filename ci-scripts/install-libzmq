@@ -1,6 +1,7 @@
 #!/bin/sh -x
 # vim: ft=sh
 set -e
+ls -la ~/lib/pkgconfig
 mkdir -p ~/src
 cd ~/src
 env
