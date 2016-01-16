@@ -4,6 +4,7 @@ sudo: required
 cache:
   directories:
     - $HOME/.ccache
+    - $HOME/.bundle
 rvm:
   - 2.3.0
   - 2.2.4
@@ -14,5 +15,6 @@ before_install:
   - ci-scripts/install-libsodium
   - ci-scripts/install-libzmq
   - ci-scripts/install-libczmq
+  - export BUNDLE_PATH=$HOME/.bundle # bundle caching
   - gem install bundler -v 1.10.6
 script: bundle exec rake spec
