@@ -2,7 +2,8 @@
 # vim: ft=sh
 set -e
 
-SODIUM_VERSION=1.0.8
+# always get latest release
+SODIUM_VERSION=$(basename `wget -O /dev/null --max-redirect=1 https://github.com/jedisct1/libsodium/releases/latest 2>&1 | grep '\[following\]'| cut -d" " -f2`)
 SODIUM_URL=https://github.com/jedisct1/libsodium/releases/download/${SODIUM_VERSION}/libsodium-${SODIUM_VERSION}.tar.gz
 
 wget $SODIUM_URL
