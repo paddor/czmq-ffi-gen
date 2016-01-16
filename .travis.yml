@@ -1,5 +1,5 @@
 language: ruby
-sudo: required
+sudo: false
 cache:
   directories:
     - $HOME/.ccache
@@ -11,6 +11,7 @@ rvm:
   - jruby-head
 before_install:
   - PATH="/usr/lib/ccache:$PATH" # enable ccache
+  - export LD_LIBRARY_PATH=$HOME/lib # point to where we'll install custom libs
   - ci-scripts/install-libsodium
   - ci-scripts/install-libzmq
   - ci-scripts/install-libczmq

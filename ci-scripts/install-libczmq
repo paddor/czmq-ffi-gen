@@ -5,7 +5,6 @@ set -e
 git submodule update --init -- vendor/czmq
 cd vendor/czmq
 ./autogen.sh
-./configure
+./configure --prefix=$HOME
 make
-sudo make install
-sudo ldconfig
+make install
