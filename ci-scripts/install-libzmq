@@ -8,6 +8,6 @@ env
 git clone https://github.com/zeromq/libzmq
 cd libzmq
 ./autogen.sh
-sodium_LIBS="$LD_RUN_PATH" ./configure --prefix=$HOME
+./configure --prefix=$HOME
 make
 make install

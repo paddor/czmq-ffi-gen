@@ -12,6 +12,7 @@ before_install:
   - PATH="/usr/lib/ccache:$PATH" # enable ccache
   - export LD_LIBRARY_PATH=$HOME/lib # custom libs (for execution)
   - export LD_RUN_PATH=$HOME/lib # custom libs (for linking)
+  - export PKG_CONFIG_PATH="$HOME/lib:$PKG_CONFIG_PATH" # custom libs (for linking)
   - ci-scripts/install-libsodium
   - ci-scripts/install-libzmq
   - ci-scripts/install-libczmq
