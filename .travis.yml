@@ -1,6 +1,10 @@
 language: ruby
 cache: bundler
 sudo: required
+cache:
+  directories:
+    - vendor
+    - $HOME/.ccache
 rvm:
   - 2.2.4
   - rubinius
