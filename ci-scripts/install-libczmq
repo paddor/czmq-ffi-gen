@@ -11,8 +11,15 @@ submodule="vendor/czmq"
 # NOTE: This is idempotent.
 git submodule init -- $submodule
 
+# useful output
+git submodule status -- $submodule
+
+# TEST whether "grep ... '^.'" works as expected. On OSX, it doesn't. On OSX,
+# it matches every character, not only the first of each line. WTF
+git submodule status -- $submodule | grep -o '^.'
+
 # check if vendor/ directory cache is up to date
-status=`git submodule status -- $submodule | sed -e 's/\(.\).*/\1/'`
+status="`git submodule status -- $submodule | sed -e 's/\(.\).*/\1/'`"
 # status is one of:
 #   " " (up-to-date)
 #   "-" (not initialized)
