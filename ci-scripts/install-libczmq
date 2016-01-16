@@ -19,24 +19,24 @@ status=`git submodule status -- $submodule | sed -e 's/\(.\).*/\1/'`
 #   "+" (wrong commit)
 #   "U" (merge conflicts)
 
-case "$status"
-	" ")
-		echo "Git submodule $submodule from cache is still up-to-date."
-		cd $submodule
-		echo "No compilation should be needed."
-		;;
-	"+")
-		echo "Git submodule $submodule from cache is needs to be updated."
-		git submodule update -- $submodule
-		cd $submodule
-		./autogen.sh
-		./configure
-		make
-		;;
-	*)
-		echo "Git submodule $submodule is in bad state: '$state'" >&2
-		exit 1
-		;;
+case "$status" in
+" ")
+	echo "Git submodule $submodule from cache is still up-to-date."
+	cd $submodule
+	echo "No compilation should be needed."
+	;;
+"+")
+	echo "Git submodule $submodule from cache is needs to be updated."
+	git submodule update -- $submodule
+	cd $submodule
+	./autogen.sh
+	./configure
+	make
+	;;
+*)
+	echo "Git submodule $submodule is in bad state: '$state'" >&2
+	exit 1
+	;;
 esac
 
 sudo make install
