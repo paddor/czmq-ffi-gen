@@ -3,6 +3,7 @@
 set -e
 pwd
 env
+ls -la /usr/lib/ccache
 cd vendor
 
 if [ -e libzmq ]
