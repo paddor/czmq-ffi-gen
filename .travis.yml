@@ -6,8 +6,10 @@ cache:
     - $HOME/.bundle
 rvm:
   - 2.3.0
-  - rbx
+  - 2.2.4
+  - 2.1.8
   - jruby-head
+  - rbx
 before_install:
   - PATH="/usr/lib/ccache:$PATH" # enable ccache
   - export LD_LIBRARY_PATH=$HOME/lib # custom libs (for execution)
