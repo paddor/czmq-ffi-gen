@@ -23,33 +23,37 @@ The actual generated code lies in CZMQ, which is Git submodule of this
 repository, registered under `vendor/czmq`.
 
 So if you're not happy with any of the generated code, go have a closer look at
-CZMQ or zproject, which is used by CZMQ to generate the low-level binding.
+[CZMQ](https://github.com/zeromq/czmq) (or
+[zproject](https://github.com/zeromq/zproject), which is used by CZMQ to
+generate the low-level binding).
 
 ### API Documentation
 For that same reason, API documentation of unreleased code (directly off this
 repository), like
 [rubydoc.info/github/paddor/czmq-ffi-gen](http://www.rubydoc.info/github/paddor/czmq-ffi-gen)
 **does NOT include any of the generated code**. _Rubydoc.info_ doesn't check
-out Git submodules as part of its documentation procedure. However, API
-documentation of the **released gem should work** just fine, as the gem release
-process will include all required source files directly within the gem.
+out Git submodules as part of its documentation procedure.
 
-**Check out**
+However, the API documentation of the **released** gem should include all the
+code, as the gem release process will include all required source files
+directly within the gem.
+
+Check out
 [http://www.rubydoc.info/gems/czmq-ffi-gen](http://www.rubydoc.info/gems/czmq-ffi-gen)
-for the API documentation.
+for the API documentation **for the released gem**.
 
 ## Supported Rubies
 
 Tested on CI with these:
 
-* Ruby 2.2.4
+* MRI 2.3, 2.2.4, 2.1.8
 * JRuby HEAD (>= 9.0.0.0)
 * Rubinius
 
 
 ### Known NOT to work
 
-* JRuby 1.7.x
+* JRuby 1.7.x and MRI < 2.0
   * doesn't work because of the use of the double splat operator (`**opts`)
 
 ## Installation
