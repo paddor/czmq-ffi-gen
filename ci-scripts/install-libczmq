@@ -15,7 +15,8 @@ HEAD)
 	;;
 3.0)
 	echo "Using latest 3.0 tag ..."
-	tag=`git for-each-ref --count=1 --sort='-*taggerdate' --format="%(refname:short)" "refs/tags/v3.0.*"`
+	git tag
+	tag=`git for-each-ref --count=1 --sort='-*taggerdate' --format="%(refname:short)" "refs/tags/v3.0.*"` # FIXME
 	echo "Using tag: $tag"
 	git pull origin master
 	git checkout $tag
