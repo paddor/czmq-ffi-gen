@@ -1,3 +1,9 @@
+0.7.0 (01/21/2016)
+-----
+* add support for current stable release 3.0.2 of CZMQ
+* upgrade CZMQ low-level binding to
+  - gracefully handle absent draft functions
+
 0.6.0 (01/15/2016)
 -----
 * upgrade CZMQ low-level binding to
