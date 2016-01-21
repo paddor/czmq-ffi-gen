@@ -3,7 +3,7 @@
 set -e
 
 git submodule update --init -- vendor/czmq
-cd vendor/czmq
+pushd vendor/czmq
 
 case "$CZMQ_VERSION" in
 "")
@@ -29,3 +29,7 @@ esac
 ./configure --prefix=$HOME
 make -j2
 make install
+popd
+
+# Restore the generated Ruby binding of commit recorded in git submodule vendor/czmq.
+git submodule update -- vendor/czmq
