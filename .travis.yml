@@ -4,9 +4,6 @@ cache:
   directories:
     - $HOME/.ccache
     - $HOME/.bundle
-os:
-  - linux
-  - osx
 rvm:
   - 2.3.0
   - 2.2.4
