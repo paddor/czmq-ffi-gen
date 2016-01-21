@@ -4,6 +4,27 @@ set -e
 
 git submodule update --init -- vendor/czmq
 cd vendor/czmq
+
+case "$CZMQ_VERSION" in
+"")
+	echo "Using commit noted in git submodule"
+	;;
+HEAD)
+	echo "Using latest commit (HEAD)"
+	git pull
+	;;
+3.0)
+	echo "Using latest 3.0 tag ..."
+	tag=`git for-each-ref --count=1 --sort='-*taggerdate' --format="%(refname:short)" "refs/tags/v3.0.*"`
+	echo "Using tag: $tag"
+	git fetch --tags
+	git checkout $tag
+	;;
+*)
+	echo "\$CZMQ_VERSION not set."
+	exit 1
+esac
+
 ./autogen.sh
 ./configure --prefix=$HOME
 make -j2

@@ -6,6 +6,22 @@ cd ~/src
 
 git clone https://github.com/zeromq/libzmq
 cd libzmq
+
+case "$ZMQ_VERSION" in
+HEAD|"")
+	echo "Using latest commit (HEAD)"
+	;;
+3.2|4.0|4.1)
+	echo "Using latest ${ZMQ_VERSION} tag ..."
+	tag=`git for-each-ref --count=1 --sort='-*taggerdate' --format="%(refname:short)" "refs/tags/v${ZMQ_VERSION}.*"`
+	echo "Using tag: $tag"
+	git checkout $tag
+	;;
+*)
+	echo "\$CZMQ_VERSION not set."
+	exit 1
+esac
+
 ./autogen.sh
 ./configure --prefix=$HOME
 make -j2

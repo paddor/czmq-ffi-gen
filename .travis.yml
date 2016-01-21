@@ -4,12 +4,20 @@ cache:
   directories:
     - $HOME/.ccache
     - $HOME/.bundle
+os:
+  - linux
+  - osx
 rvm:
   - 2.3.0
   - 2.2.4
   - 2.1.8
   - jruby-head
   - rbx
+env:
+  - CZMQ_VERSION=HEAD ZMQ_VERSION=HEAD
+  - CZMQ_VERSION=3.0 ZMQ_VERSION=4.1
+  - CZMQ_VERSION=3.0 ZMQ_VERSION=4.0
+  - CZMQ_VERSION=3.0 ZMQ_VERSION=3.2
 before_install:
   - PATH="/usr/lib/ccache:$PATH" # enable ccache
   - export LD_LIBRARY_PATH=$HOME/lib # custom libs (for execution)
