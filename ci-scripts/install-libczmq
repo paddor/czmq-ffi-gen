@@ -34,11 +34,7 @@ make -j2
 make install
 
 # Restore the generated Ruby binding of commit recorded in git submodule vendor/czmq.
+git checkout master
 cd ../..
-# git submodule update --force -- vendor/czmq # NOTE: doesn't work. git really seems broken on Travis CI.
-rm -rf vendor/czmq
-git submodule update --init -- vendor/czmq
-ls -la lib/czmq-ffi-gen
-diff lib/czmq-ffi-gen/czmq/ffi.rb vendor/czmq/bindings/ruby/lib/czmq/ffi.rb
-cat lib/czmq-ffi-gen/czmq/ffi.rb
-cat vendor/czmq/bindings/ruby/lib/czmq/ffi.rb
+git submodule update --force -- vendor/czmq
+cat lib/czmq-ffi-gen/czmq/ffi.rb # TODO: remove
