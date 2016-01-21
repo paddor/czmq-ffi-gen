@@ -15,7 +15,7 @@ HEAD)
 	;;
 3.0)
 	echo "Using latest 3.0 tag ..."
-	tag=`git tag | grep -F v0.3. | sort --field-separator=. --key=3 --numeric-sort | tail -1`
+	tag=`git tag | grep -F v3.0. | sort --field-separator=. --key=3 --numeric-sort | tail -1`
 	echo "Using tag: $tag"
 	git pull origin master
 	git checkout $tag
