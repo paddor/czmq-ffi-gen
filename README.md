@@ -45,10 +45,9 @@ for the API documentation **for the released gem**.
 ## Requirements
 
 * CZMQ >= 3.0
-* ZMQ >= 3.2
+* ZMQ >= 4.0
 
 For security mechanisms like CURVE, you'll need:
-* ZMQ >= 4.0
 * [libsodium](https://github.com/jedisct1/libsodium)<Paste>
 
 On OSX using homebrew, run:

@@ -9,10 +9,6 @@ HEAD|"")
 	echo "Using latest commit (HEAD)"
 	git clone https://github.com/zeromq/libzmq libzmq
 	;;
-3.2)
-	echo "Using latest commit on $ZMQ_VERSION fork ..."
-	git clone https://github.com/zeromq/zeromq3-x libzmq
-	;;
 4.0)
 	echo "Using latest commit on $ZMQ_VERSION fork ..."
 	git clone https://github.com/zeromq/zeromq4-x libzmq
