@@ -11,13 +11,13 @@ case "$CZMQ_VERSION" in
 	;;
 HEAD)
 	echo "Using latest commit (HEAD)"
-	git submodule update --remote -- vendor/czmq
+	git pull origin master
 	;;
 3.0)
 	echo "Using latest 3.0 tag ..."
 	tag=`git for-each-ref --count=1 --sort='-*taggerdate' --format="%(refname:short)" "refs/tags/v3.0.*"`
 	echo "Using tag: $tag"
-	git submodule update --remote -- vendor/czmq
+	git pull origin master
 	git checkout $tag
 	;;
 *)
