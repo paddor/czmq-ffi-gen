@@ -32,4 +32,4 @@ make install
 
 # Restore the generated Ruby binding of commit recorded in git submodule vendor/czmq.
 cd ../..
-git submodule update -- vendor/czmq
+git submodule update --force -- vendor/czmq
