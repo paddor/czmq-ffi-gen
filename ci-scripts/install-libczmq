@@ -7,17 +7,17 @@ cd vendor/czmq
 
 case "$CZMQ_VERSION" in
 "")
-	echo "Using commit noted in git submodule"
+	echo "Using commit recorded in git submodule"
 	;;
 HEAD)
 	echo "Using latest commit (HEAD)"
-	git pull
+	git submodule update --remote -- vendor/czmq
 	;;
 3.0)
 	echo "Using latest 3.0 tag ..."
 	tag=`git for-each-ref --count=1 --sort='-*taggerdate' --format="%(refname:short)" "refs/tags/v3.0.*"`
 	echo "Using tag: $tag"
-	git fetch --tags
+	git submodule update --remote -- vendor/czmq
 	git checkout $tag
 	;;
 *)
