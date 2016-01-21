@@ -1,6 +1,6 @@
 require_relative "spec_helper"
 
-describe CZMQ::FFI::Ztrie do
+describe CZMQ::FFI::Ztrie, skip: czmq_function?(:ztrie_new) do
   include_examples "a zclass"
 
   context "with a zobj" do

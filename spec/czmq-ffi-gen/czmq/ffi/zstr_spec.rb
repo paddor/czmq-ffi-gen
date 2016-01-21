@@ -3,7 +3,7 @@ require_relative "spec_helper"
 describe CZMQ::FFI::Zstr do
   include_examples "a zclass"
 
-  describe ".str" do
+  describe ".str", skip: czmq_function?(:zstr_str) do
     let(:string) { described_class.str(source).read_string }
     context "with source" do
       let(:source) { "foobar" }
