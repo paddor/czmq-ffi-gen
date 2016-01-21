@@ -4,24 +4,29 @@ set -e
 mkdir -p ~/src
 cd ~/src
 
-git clone https://github.com/zeromq/libzmq
-cd libzmq
-
 case "$ZMQ_VERSION" in
 HEAD|"")
 	echo "Using latest commit (HEAD)"
+	git clone https://github.com/zeromq/libzmq libzmq
 	;;
-3.2|4.0|4.1)
-	echo "Using latest ${ZMQ_VERSION} tag ..."
-	tag=`git for-each-ref --count=1 --sort='-*taggerdate' --format="%(refname:short)" "refs/tags/v${ZMQ_VERSION}.*"`
-	echo "Using tag: $tag"
-	git checkout $tag
+3.2)
+	echo "Using latest commit on $ZMQ_VERSION fork ..."
+	git clone https://github.com/zeromq/zeromq3-x libzmq
+	;;
+4.0)
+	echo "Using latest commit on $ZMQ_VERSION fork ..."
+	git clone https://github.com/zeromq/zeromq4-x libzmq
+	;;
+4.1)
+	echo "Using latest commit on $ZMQ_VERSION fork ..."
+	git clone https://github.com/zeromq/zeromq4-1 libzmq
 	;;
 *)
 	echo "\$CZMQ_VERSION not set."
 	exit 1
 esac
 
+cd libzmq
 ./autogen.sh
 ./configure --prefix=$HOME
 make -j2
