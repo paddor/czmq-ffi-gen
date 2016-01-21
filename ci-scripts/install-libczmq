@@ -6,5 +6,5 @@ git submodule update --init -- vendor/czmq
 cd vendor/czmq
 ./autogen.sh
 ./configure --prefix=$HOME
-make
+make -j2
 make install

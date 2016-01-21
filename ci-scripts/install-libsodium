@@ -12,5 +12,5 @@ wget $SODIUM_URL
 tar -xvzf libsodium-${SODIUM_VERSION}.tar.gz
 cd "libsodium-${SODIUM_VERSION}"
 ./configure --prefix=$HOME
-make
+make -j2
 make install

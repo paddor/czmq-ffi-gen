@@ -8,5 +8,5 @@ git clone https://github.com/zeromq/libzmq
 cd libzmq
 ./autogen.sh
 ./configure --prefix=$HOME
-make
+make -j2
 make install
