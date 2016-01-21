@@ -42,36 +42,46 @@ Check out
 [http://www.rubydoc.info/gems/czmq-ffi-gen](http://www.rubydoc.info/gems/czmq-ffi-gen)
 for the API documentation **for the released gem**.
 
-## Supported Rubies
+## Requirements
 
-Tested on CI with these:
+* CZMQ >= 3.0
+* ZMQ >= 3.2
+
+For security mechanisms like CURVE, you'll need:
+* ZMQ >= 4.0
+* [libsodium](https://github.com/jedisct1/libsodium)<Paste>
+
+On OSX using homebrew, run:
+
+    $ brew install libsodium
+    $ brew install zmq --with-libsodium
+    $ brew install czmq --HEAD
+
+If you're running Linux, go check [this page](http://zeromq.org/distro:_start)
+to get more help. Make sure to install CZMQ, not only ZMQ.
+
+**Note**: The option `--HEAD` is recommended because this binding is generated
+directly from CZMQ's master branch. However, it's not required.
+
+### Supported Rubies
+
+See [.travis.yml](https://github.com/paddor/czmq-ffi-gen/blob/master/.travis.yml)
+for a list of Ruby versions against which czmq-ffi-gen is tested.
+
+At the time of writing, these include:
 
 * MRI 2.3, 2.2.4, 2.1.8
-* JRuby HEAD (>= 9.0.0.0)
-* Rubinius
+* Rubinius (HEAD)
+* JRuby 9000 (HEAD)
 
-
-### Known NOT to work
+#### Known NOT to work
 
 * JRuby 1.7.x and MRI < 2.0
   * doesn't work because of the use of the double splat operator (`**opts`)
 
 ## Installation
 
-This gem requires the presence of the CZMQ library, which in turn requires the
-ZMQ library. For **security mechanisms** like CURVE, you'll need
-[libsodium](https://github.com/jedisct1/libsodium) and at least ZMQ 4.0.
-
-On OSX using homebrew, run:
-
-    $ brew install libsodium
-    $ brew install zmq --with-libsodium
-    $ brew install czmq
-
-If you're running Linux, go check [this page](http://zeromq.org/distro:_start)
-to get more help. Make sure to install CZMQ, not only ZMQ.
-
-To then use this gem, add this line to your application's Gemfile:
+To use this gem, add this line to your application's Gemfile:
 
 ```ruby
 gem 'czmq-ffi-gen'
