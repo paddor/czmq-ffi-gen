@@ -1,5 +1,8 @@
 #!/bin/sh -x
 # vim: ft=sh
+for d in /usr/local/lib /opt/local/lib /usr/lib64; do
+	find $d -name '*czmq*'
+done
 set -e
 
 git submodule update --init -- vendor/czmq
