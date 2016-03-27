@@ -1,3 +1,10 @@
+0.8.0 (03/27/2016)
+-----
+* upgrade CZMQ low-level binding to
+  - fix function names in warnings
+  - have constants instead of enums
+  - adapt to the new interface of zarmour_encode/decode
+
 0.7.0 (01/21/2016)
 -----
 * add support for current stable release 3.0.2 of CZMQ

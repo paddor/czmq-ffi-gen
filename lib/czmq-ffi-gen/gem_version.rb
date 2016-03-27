@@ -1,5 +1,5 @@
 module CZMQ
   module FFI
-    GEM_VERSION = "0.7.0"
+    GEM_VERSION = "0.8.0"
   end
 end
