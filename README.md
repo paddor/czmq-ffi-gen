@@ -44,7 +44,7 @@ for the API documentation **for the released gem**.
 
 ## Requirements
 
-* CZMQ >= 3.0
+* CZMQ > 3.0 (master)
 * ZMQ >= 4.0
 
 For security mechanisms like CURVE, you'll need:
@@ -59,8 +59,8 @@ On OSX using homebrew, run:
 If you're running Linux, go check [this page](http://zeromq.org/distro:_start)
 to get more help. Make sure to install CZMQ, not only ZMQ.
 
-**Note**: The option `--HEAD` is recommended because this binding is generated
-directly from CZMQ's master branch. However, it's not required.
+**Note**: The option `--HEAD` is required because this binding is generated
+directly from CZMQ's master branch. The current and older releases aren't supported.
 
 ### Supported Rubies
 
