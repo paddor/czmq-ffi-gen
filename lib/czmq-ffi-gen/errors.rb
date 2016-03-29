@@ -7,6 +7,6 @@ module CZMQ::FFI::Errors
 
   # @return [String] the string representation of the last (ZMQ) error
   def self.strerror
-    CZMQ::FFI::LibZMQ.zmq_strerror(zmq_errno)
+    CZMQ::FFI::LibZMQ.zmq_strerror(errno)
   end
 end

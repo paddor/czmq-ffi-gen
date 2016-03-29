@@ -1,3 +1,7 @@
+0.8.2 (03/29/2016)
+-----
+* fix CZMQ::FFI::Errors.strerror
+
 0.8.1 (03/29/2016)
 -----
 * provide CZMQ::FFI::ZMQ_VERSION

@@ -11,7 +11,7 @@ describe CZMQ::FFI::Errors do
   end
   describe ".strerror" do
     before(:each) do
-      expect(CZMQ::FFI::Errors).to receive(:zmq_errno).and_return(22) # EINVAL
+      expect(CZMQ::FFI::LibZMQ).to receive(:zmq_errno).and_return(22) # EINVAL
     end
 
     it "returns error string" do
