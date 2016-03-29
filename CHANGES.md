@@ -1,3 +1,10 @@
+0.8.1 (03/29/2016)
+-----
+* provide CZMQ::FFI::ZMQ_VERSION
+* rename CZMQ::FFI::LIBRARY_VERSION to CZMQ::FFI::CZMQ_VERSION
+* new module CZMQ::FFI::LibZMQ which is the sole place to interact directly
+  with the ZMQ library
+
 0.8.0 (03/27/2016)
 -----
 * upgrade CZMQ low-level binding to
