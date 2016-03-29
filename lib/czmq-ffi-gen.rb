@@ -1,6 +1,5 @@
 require_relative "czmq-ffi-gen/czmq/ffi"
-require_relative "czmq-ffi-gen/gem_version"
-require_relative "czmq-ffi-gen/library_version"
+require_relative "czmq-ffi-gen/versions"
 require_relative "czmq-ffi-gen/errors"
 require_relative "czmq-ffi-gen/signals"
 require_relative "czmq-ffi-gen/legacy"
