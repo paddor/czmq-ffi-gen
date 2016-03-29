@@ -1,3 +1,8 @@
+0.8.3 (03/29/2016)
+-----
+* avoid extra call to wrapper method CZMQ::FFI::Errors.errno (CZTop's test
+  suite doesn't like this)
+
 0.8.2 (03/29/2016)
 -----
 * fix CZMQ::FFI::Errors.strerror
