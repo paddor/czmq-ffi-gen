@@ -44,7 +44,7 @@ for the API documentation **for the released gem**.
 
 ## Requirements
 
-* CZMQ > 3.0 (you *have to* build from master)
+* CZMQ > 3.0 (you **need to** build from master)
 * ZMQ >= 4.0
 
 For security mechanisms like CURVE, you'll need:
