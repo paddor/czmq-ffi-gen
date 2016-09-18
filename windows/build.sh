@@ -6,7 +6,7 @@ set -e
 
 ARCHITECTURE=$1
 
-BASE_DIR=$(cd $(dirname $0); pwd)
+BASE_DIR=$(cd $(dirname $0)/..; pwd)
 cd ${BASE_DIR}
 
 PREFIX=${BASE_DIR}/vendor/local

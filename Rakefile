@@ -25,7 +25,7 @@ namespace :build do
         build_commands = [
           "groupadd --gid #{Process.gid} #{build_user_name}",
           "useradd --uid #{Process.uid} --gid #{Process.gid} #{build_user_name}",
-          "sudo -u #{build_user_name} /czmq-ffi-gen/build.sh #{architecture}",
+          "sudo -u #{build_user_name} /czmq-ffi-gen/windows/build.sh #{architecture}",
         ]
         sh("docker", "run",
            "--rm",
