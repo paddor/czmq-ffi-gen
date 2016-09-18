@@ -1,3 +1,8 @@
+0.9.0 (09/18/2016)
+-----
+* support building and pushing fat gems for Windows x86 and x64
+* upgrade CZMQ low-level binding to fix cross compile errors
+
 0.8.3 (03/29/2016)
 -----
 * avoid extra call to wrapper method CZMQ::FFI::Errors.errno (CZTop's test
