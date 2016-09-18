@@ -1,3 +1,4 @@
+require_relative "czmq-ffi-gen/vendor"
 require_relative "czmq-ffi-gen/czmq/ffi"
 require_relative "czmq-ffi-gen/versions"
 require_relative "czmq-ffi-gen/errors"
