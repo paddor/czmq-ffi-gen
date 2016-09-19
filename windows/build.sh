@@ -20,11 +20,11 @@ fi
 
 rm -rf ${PREFIX}
 
-libzmq_build_dir=vendor/libzmq/build
+libzmq_build_dir=build/libzmq
 rm -rf ${libzmq_build_dir}
 mkdir -p ${libzmq_build_dir}
 cd ${libzmq_build_dir}
-cmake .. \
+cmake ${BASE_DIR}/vendor/libzmq \
   -DCMAKE_INSTALL_PREFIX=${PREFIX} \
   -DCMAKE_SYSTEM_NAME=Windows \
   -DCMAKE_SYSTEM_PROCESSOR=${ARCHITECTURE} \
@@ -39,11 +39,11 @@ make -j8
 make install
 cd -
 
-czmq_build_dir=vendor/czmq/build
+czmq_build_dir=build/czmq
 rm -rf ${czmq_build_dir}
 mkdir -p ${czmq_build_dir}
 cd ${czmq_build_dir}
-cmake .. \
+cmake ${BASE_DIR}/vendor/czmq \
   -DCMAKE_INSTALL_PREFIX=${PREFIX} \
   -DCMAKE_SYSTEM_NAME=Windows \
   -DCMAKE_SYSTEM_PROCESSOR=${ARCHITECTURE} \
