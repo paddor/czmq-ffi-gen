@@ -21,12 +21,6 @@ namespace :build do
            "--tag", "czmq-ffi-gen-builder",
            "--rm",
            ".")
-        build_user_name = "build"
-        build_commands = [
-          "groupadd --gid #{Process.gid} #{build_user_name}",
-          "useradd --uid #{Process.uid} --gid #{Process.gid} #{build_user_name}",
-          "sudo -u #{build_user_name} /czmq-ffi-gen/windows/build.sh #{architecture}",
-        ]
         sh("docker", "run",
            "--rm",
            "--interactive",
@@ -35,7 +29,7 @@ namespace :build do
            "czmq-ffi-gen-builder",
            "/bin/bash",
            "-c",
-           build_commands.join(" && "))
+           "/czmq-ffi-gen/windows/build.sh #{architecture}")
 
         spec = Bundler::GemHelper.gemspec.dup
         spec.platform = "#{architecture}-mingw32"
