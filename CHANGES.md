@@ -1,3 +1,7 @@
+0.9.2 (09/19/2016)
+-----
+* no changes
+
 0.9.1 (09/19/2016)
 -----
 * no changes, just second try at publishing (publishing of version 0.9.0 failed
