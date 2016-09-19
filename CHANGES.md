@@ -1,3 +1,8 @@
+0.9.1 (09/19/2016)
+-----
+* no changes, just second try at publishing (publishing of version 0.9.0 failed
+  due to human error)
+
 0.9.0 (09/18/2016)
 -----
 * support building and pushing fat gems for Windows x86 and x64
