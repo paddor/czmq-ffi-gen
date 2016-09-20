@@ -44,6 +44,7 @@ rm -rf ${czmq_build_dir}
 mkdir -p ${czmq_build_dir}
 cd ${czmq_build_dir}
 cmake ${BASE_DIR}/vendor/czmq \
+  -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=${PREFIX} \
   -DCMAKE_SYSTEM_NAME=Windows \
   -DCMAKE_SYSTEM_PROCESSOR=${ARCHITECTURE} \
