@@ -1,3 +1,8 @@
+0.9.3 (09/21/2016)
+-----
+* fix issue with special build types (zeromq/czmq@4acc4ed)
+  (thanks to Kouhei Sutou)
+
 0.9.2 (09/19/2016)
 -----
 * no changes
@@ -10,6 +15,7 @@
 0.9.0 (09/18/2016)
 -----
 * support building and pushing fat gems for Windows x86 and x64
+  (thanks to Kouhei Sutou)
 * upgrade CZMQ low-level binding to fix cross compile errors
 
 0.8.3 (03/29/2016)
