@@ -1,3 +1,8 @@
+0.9.4 (09/22/2016)
+-----
+* update CZMQ low-level binding to
+  - fix zsock_fd() FFI attachment (and thus CZMQ::FFI::Zsock.fd)
+
 0.9.3 (09/21/2016)
 -----
 * fix issue with special build types (zeromq/czmq@4acc4ed)
