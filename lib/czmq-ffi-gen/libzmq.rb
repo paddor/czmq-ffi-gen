@@ -4,8 +4,10 @@ module CZMQ::FFI::LibZMQ
   extend ::FFI::Library
 
   lib_name = 'libzmq'
-  lib_paths = ['/usr/local/lib', '/opt/local/lib', '/usr/lib64']
-    .map { |path| "#{path}/#{lib_name}.#{::FFI::Platform::LIBSUFFIX}" }
+  lib_dirs = ['/usr/local/lib', '/opt/local/lib', '/usr/lib64']
+  env_path = ENV['LIBZMQ_PATH']
+  lib_dirs = [*env_path.split(':'), *lib_dirs] if env_path
+  lib_paths = lib_dirs.map { |path| "#{path}/#{lib_name}.#{::FFI::Platform::LIBSUFFIX}" }
   ffi_lib lib_paths + [lib_name]
 
   opts = {
