@@ -1,3 +1,10 @@
+0.10.0 (09/25/2016)
+-----
+* update CZMQ low-level binding to honor the LIBCZMQ_PATH environment variable
+  to set a custom search path for the CZMQ library
+* honor the LIBZMQ_PATH environment variable to set a custom search path for
+  the ZMQ library
+
 0.9.4 (09/22/2016)
 -----
 * update CZMQ low-level binding to
