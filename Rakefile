@@ -46,6 +46,8 @@ namespace :build do
   end
 end
 
+task :build => "build:windows"
+
 namespace :release do
   namespace :windows do
     namespace :rubygem_push do
@@ -65,4 +67,17 @@ end
 
 windows_architectures.each do |architecture|
   task :release => "release:windows:rubygem_push:#{architecture}"
+end
+
+namespace :release do
+  dependencies = [
+    "release:source_control_push",
+    "release:rubygem_push",
+  ]
+  windows_architectures.each do |architecture|
+    dependencies << "release:windows:rubygem_push:#{architecture}"
+  end
+
+  desc "Release already built gems"
+  task :no_build => dependencies
 end
