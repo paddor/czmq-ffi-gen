@@ -46,8 +46,6 @@ namespace :build do
   end
 end
 
-task :build => "build:windows"
-
 namespace :release do
   namespace :windows do
     namespace :rubygem_push do
@@ -71,6 +69,7 @@ end
 
 namespace :release do
   dependencies = [
+    "build",
     "release:source_control_push",
     "release:rubygem_push",
   ]
@@ -79,5 +78,5 @@ namespace :release do
   end
 
   desc "Release already built gems"
-  task :no_build => dependencies
+  task :no_windows_build => dependencies
 end
