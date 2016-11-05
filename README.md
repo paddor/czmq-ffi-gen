@@ -44,23 +44,20 @@ for the API documentation **for the released gem**.
 
 ## Requirements
 
-* CZMQ > 3.0 (you **need to** build from master)
+* CZMQ >= 4.0
 * ZMQ >= 4.0
 
-For security mechanisms like CURVE, you'll need:
-* [libsodium](https://github.com/jedisct1/libsodium)<Paste>
+For security mechanisms like CURVE, you can use an external library:
+* [libsodium](https://github.com/jedisct1/libsodium)
 
 On OSX using homebrew, run:
 
     $ brew install libsodium
     $ brew install zmq --with-libsodium
-    $ brew install czmq --HEAD
+    $ brew install czmq
 
 If you're running Linux, go check [this page](http://zeromq.org/distro:_start)
 to get more help. Make sure to install CZMQ, not only ZMQ.
-
-**Note**: The option `--HEAD` is required because this binding is generated
-directly from CZMQ's master branch. The current and older releases aren't supported.
 
 ### Supported Rubies
 
