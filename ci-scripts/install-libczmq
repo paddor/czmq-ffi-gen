@@ -10,12 +10,13 @@ case "$CZMQ_VERSION" in
 	echo "Using commit recorded in git submodule"
 	;;
 HEAD)
-	echo "Using latest commit (HEAD)"
+	echo "Using latest commit (HEAD) and compiling with --enable-drafts ..."
 	git pull origin master
+	CONFIGURE_OPTS="--enable-drafts"
 	;;
-3.0)
-	echo "Using latest 3.0 tag ..."
-	tag=`git tag | grep -F v3.0. | sort --field-separator=. --key=3 --numeric-sort | tail -1`
+stable)
+	echo "Using latest stable release ..."
+	tag=`git tag | grep ^v | grep -v -- -rc | sort --field-separator=. --key=1,3 --numeric-sort | tail -1`
 	echo "Using tag: $tag"
 	git pull origin master
 	git checkout $tag
@@ -26,7 +27,7 @@ HEAD)
 esac
 
 ./autogen.sh
-./configure --prefix=$HOME
+./configure --prefix=$HOME $CONFIGURE_OPTS
 make -j2
 make install
 

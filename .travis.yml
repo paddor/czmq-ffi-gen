@@ -5,27 +5,29 @@ cache:
     - $HOME/.ccache
     - $HOME/.bundle
 rvm:
-  - 2.3.0
-  - 2.2.4
-  - 2.1.8
+  - 2.3.1
+  - 2.2.5
+  - 2.1.9
   - jruby-head
-  - rbx-3
+  - rbx
 env:
-  - CZMQ_VERSION=HEAD ZMQ_VERSION=HEAD
-  - CZMQ_VERSION=HEAD ZMQ_VERSION=4.1
-  - CZMQ_VERSION=HEAD ZMQ_VERSION=4.0
+  - CZMQ_VERSION=HEAD ZMQ_VERSION=stable
+  - CZMQ_VERSION=stable ZMQ_VERSION=stable
 matrix:
   exclude:
-    - rvm: 2.2.4
-      env: CZMQ_VERSION=HEAD ZMQ_VERSION=HEAD
-    - rvm: 2.1.8
-      env: CZMQ_VERSION=HEAD ZMQ_VERSION=HEAD
+    - rvm: 2.2.5
+      env: CZMQ_VERSION=HEAD ZMQ_VERSION=stable
+    - rvm: 2.1.9
+      env: CZMQ_VERSION=HEAD ZMQ_VERSION=stable
+    - rvm: rbx
+      env: CZMQ_VERSION=HEAD ZMQ_VERSION=stable
+  allow_failures:
+    - rvm: rbx
 before_install:
   - PATH="/usr/lib/ccache:$PATH" # enable ccache
   - export LD_LIBRARY_PATH=$HOME/lib # custom libs (for execution)
   - export PKG_CONFIG_PATH=$HOME/lib/pkgconfig # custom libs (for linking)
   - export BUNDLE_PATH=$HOME/.bundle # bundle caching
-  - ci-scripts/install-libsodium
   - ci-scripts/install-libzmq
   - ci-scripts/install-libczmq
   - gem install bundler -v 1.10.6
