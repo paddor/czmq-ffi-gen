@@ -1,3 +1,7 @@
+0.13.0 (01/01/2017)
+-----
+* update CZMQ low-level binding to v4.0.2 to fix #7
+
 0.12.0 (11/02/2016)
 -----
 * update CZMQ low-level binding to v4.0.0
