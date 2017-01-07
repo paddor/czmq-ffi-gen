@@ -12,7 +12,7 @@ case "$CZMQ_VERSION" in
 HEAD)
 	echo "Using latest commit (HEAD) and compiling with --enable-drafts ..."
 	git pull origin master
-	CONFIGURE_OPTS="--enable-drafts"
+	CONFIGURE_OPTS="--enable-drafts=yes"
 	;;
 stable)
 	echo "Using latest stable release ..."
@@ -20,6 +20,7 @@ stable)
 	echo "Using tag: $tag"
 	git pull origin master
 	git checkout $tag
+	CONFIGURE_OPTS="--enable-drafts=no"
 	;;
 *)
 	echo "\$CZMQ_VERSION not set."
