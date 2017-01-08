@@ -30,5 +30,6 @@ before_install:
   - export BUNDLE_PATH=$HOME/.bundle # bundle caching
   - ci-scripts/install-libzmq
   - ci-scripts/install-libczmq
+  - export DRAFT_API; if [ $CZMQ_VERSION = HEAD ]; then DRAFT_API=yes; else DRAFT_API=no; fi
   - gem install bundler -v 1.10.6
 script: bundle exec rake spec
