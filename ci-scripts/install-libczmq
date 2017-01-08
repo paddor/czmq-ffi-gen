@@ -23,7 +23,7 @@ stable)
 	CONFIGURE_OPTS="--enable-drafts=no"
 	;;
 *)
-	echo "\$CZMQ_VERSION not set."
+	echo '$CZMQ_VERSION not set.'
 	exit 1
 esac
 
