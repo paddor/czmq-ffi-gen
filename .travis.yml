@@ -10,7 +10,7 @@ rvm:
   - 2.2.5
   - 2.1.9
   - jruby-head
-  - rbx
+  - rubinius-3.69
 env:
   - CZMQ_VERSION=HEAD ZMQ_VERSION=stable
   - CZMQ_VERSION=stable ZMQ_VERSION=stable
@@ -20,10 +20,10 @@ matrix:
       env: CZMQ_VERSION=HEAD ZMQ_VERSION=stable
     - rvm: 2.1.9
       env: CZMQ_VERSION=HEAD ZMQ_VERSION=stable
-    - rvm: rbx
+    - rvm: rubinius-3.69
       env: CZMQ_VERSION=HEAD ZMQ_VERSION=stable
   allow_failures:
-    - rvm: rbx
+    - rvm: rubinius-3.69
 before_install:
   - PATH="/usr/lib/ccache:$PATH" # enable ccache
   - export LD_LIBRARY_PATH=$HOME/lib # custom libs (for execution)
