@@ -1,3 +1,10 @@
+0.14.0 (11/23/2017)
+-----
+* on Windows with RubyInstaller2: fix loading libczmq
+  (thanks to Christian Boos)
+* update CZMQ low-level binding because it's been a while
+* CI: use recent rubies, but don't test MRI 2.1 anymore
+
 0.13.0 (01/01/2017)
 -----
 * update CZMQ low-level binding to v4.0.2 to fix #7
