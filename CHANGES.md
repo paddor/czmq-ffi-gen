@@ -2,6 +2,7 @@
 -----
 * update CZMQ low-level binding to include fixes for zmonitor events
   (zeromq/czmq#1806)
+* fix building fat binaries for Windows (thanks to Kouhei Sutou)
 
 0.14.0 (11/27/2017)
 -----
