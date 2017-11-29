@@ -1,3 +1,8 @@
+0.14.1 (11/29/2017)
+-----
+* update CZMQ low-level binding to include fixes for zmonitor events
+  (zeromq/czmq#1806)
+
 0.14.0 (11/27/2017)
 -----
 * on Windows with RubyInstaller2: fix loading libczmq
