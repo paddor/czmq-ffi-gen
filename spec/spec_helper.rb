@@ -12,3 +12,5 @@ RSpec.configure do |config|
     config.filter_run_excluding state: :draft
   end
 end
+
+puts "Using CZMQ version #{CZMQ::FFI::CZMQ_VERSION} and ZMQ version #{CZMQ::FFI::ZMQ_VERSION}."
