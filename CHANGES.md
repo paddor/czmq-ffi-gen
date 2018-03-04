@@ -1,3 +1,7 @@
+0.15.0 (03/04/2018)
+-----
+* update CZMQ low-level binding to include fixed errno for unsupported features (ENOTSUP)
+
 0.14.1 (11/29/2017)
 -----
 * update CZMQ low-level binding to include fixes for zmonitor events
