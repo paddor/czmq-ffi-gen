@@ -3,6 +3,7 @@
 * relax gem dependencies
 * update CZMQ low-level binding
 * remove support for CZMQ 3
+* add CZMQ::FFI::LibZMQ.zmq_has, .has?(cap), .has_curve?, .has_draft?
 
 0.15.0 (03/04/2018)
 -----

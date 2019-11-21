@@ -5,10 +5,10 @@ require_relative '../lib/czmq-ffi-gen'
 RSpec.configure do |config|
   config.expect_with :rspec, :minitest
 
-  if ENV['DRAFT_API'] == 'yes'
-    warn 'Including specs for DRAFT API.'
+  if CZMQ::FFI::LibZMQ.has_draft?
+    warn 'Including specs for DRAFT API because the installed ZMQ library is built with the DRAFT API.'
   else
-    warn 'Excluding specs for DRAFT API. To enable, set DRAFT_API=yes in the environment.'
+    warn 'Excluding specs for DRAFT API. To enable, compile the ZMQ library with DRAFT API.'
     config.filter_run_excluding state: :draft
   end
 

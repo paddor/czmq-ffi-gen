@@ -16,4 +16,26 @@ module CZMQ::FFI::LibZMQ
   attach_function :zmq_strerror, [:int], :string, **opts
   attach_function :zmq_errno, [], :int, **opts
   attach_function :zmq_version, [:pointer, :pointer, :pointer], :void, **opts
+  attach_function :zmq_has, [:pointer], :int, **opts
+
+
+  # @param capability [Symbol, String] the name of the capability
+  # @return [Boolean] whether the capability is supported
+  #
+  def self.has?(capability)
+    ptr = FFI::MemoryPointer.from_string(capability.to_s.downcase)
+    zmq_has(ptr) == 1
+  end
+
+
+  # @return [Boolean] whether the DRAFT API is supported
+  def self.has_draft?
+    has? :draft
+  end
+
+
+  # @return [Boolean] whether CURVE is supported
+  def self.has_curve?
+    has? :curve
+  end
 end
