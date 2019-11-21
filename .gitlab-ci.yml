@@ -20,8 +20,13 @@
     paths:
       - "vendor/bundle"
 
+
 ruby-latest_with_stable_czmq:
   extends: .rspec
+  variables:
+    CZMQ_VERSION: "stable"
+    DRAFT_API: "no"
+
 
 ruby-latest_with_HEAD_czmq:
   extends: .rspec
