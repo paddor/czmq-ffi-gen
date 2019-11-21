@@ -5,7 +5,7 @@ ruby-latest_with_stable_czmq:
     - CZMQ_VERSION=stable
     - ZMQ_VERSION=stable
     - DRAFT_API=no
-  before_install:
+  before_script:
     - ci-scripts/install-libzmq
     - ci-scripts/install-libczmq
     - gem install bundler
