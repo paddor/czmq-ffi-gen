@@ -1,0 +1,13 @@
+ruby-latest_with_stable_czmq:
+  image: ruby:latest
+  stage: test
+  variables:
+    - CZMQ_VERSION=stable
+    - ZMQ_VERSION=stable
+    - DRAFT_API=no
+  before_install:
+    - ci-scripts/install-libzmq
+    - ci-scripts/install-libczmq
+    - gem install bundler
+  script:
+    - bundle exec rake spec
