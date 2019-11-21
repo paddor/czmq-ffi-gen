@@ -1,6 +1,7 @@
 0.16.0 (11/20/2019)
 -----
 * relax gem dependencies
+* update CZMQ low-level binding
 
 0.15.0 (03/04/2018)
 -----
