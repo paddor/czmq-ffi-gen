@@ -8,6 +8,7 @@ ruby-latest_with_stable_czmq:
   before_script:
     - export LD_LIBRARY_PATH=$HOME/lib # custom libs (for execution)
     - export PKG_CONFIG_PATH=$HOME/lib/pkgconfig # custom libs (for linking)
+    - env
     - ci-scripts/install-libzmq
     - ci-scripts/install-libczmq
     - gem install bundler
