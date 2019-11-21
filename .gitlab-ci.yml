@@ -14,3 +14,9 @@ ruby-latest_with_stable_czmq:
     - bundle install
   script:
     - bundle exec rspec
+
+ruby-latest_with_HEAD_czmq:
+  extends: ruby-latest_with_stable_czmq
+  variables:
+    CZMQ_VERSION: "HEAD"
+    DRAFT_API: "yes"
