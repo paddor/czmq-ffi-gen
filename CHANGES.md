@@ -1,4 +1,4 @@
-0.16.0 (11/20/2019)
+0.16.1 (11/20/2019)
 -----
 * relax gem dependencies
 * update CZMQ low-level binding
