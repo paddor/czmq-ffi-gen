@@ -3,6 +3,8 @@
   stage: test
   variables:
     ZMQ_VERSION: "stable"
+    CZMQ_VERSION: "stable"
+    DRAFT_API: "no"
   before_script:
     - export LD_LIBRARY_PATH=$HOME/lib # custom libs (for execution)
     - export PKG_CONFIG_PATH=$HOME/lib/pkgconfig # custom libs (for linking)
@@ -20,9 +22,6 @@
 
 ruby-latest_with_stable_czmq:
   extends: .rspec
-  variables:
-    CZMQ_VERSION: "stable"
-    DRAFT_API: "yes"
 
 ruby-latest_with_HEAD_czmq:
   extends: .rspec
