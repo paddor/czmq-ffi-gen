@@ -12,4 +12,4 @@ ruby-latest_with_stable_czmq:
     - ci-scripts/install-libczmq
     - gem install bundler
   script:
-    - bundle exec rake spec
+    - bundle exec rspec
