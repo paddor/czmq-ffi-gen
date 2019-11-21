@@ -1,3 +1,7 @@
+0.16.0 (11/20/2019)
+-----
+* relax gem dependencies
+
 0.15.0 (03/04/2018)
 -----
 * update CZMQ low-level binding to include fixed errno for unsupported features (ENOTSUP)
