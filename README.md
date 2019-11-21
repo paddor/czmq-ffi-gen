@@ -1,5 +1,4 @@
-[![Build Status on Travis CI](https://travis-ci.org/paddor/czmq-ffi-gen.svg?branch=master)](https://travis-ci.org/paddor/czmq-ffi-gen?branch=master)
-[![Dependency Status](https://gemnasium.com/paddor/czmq-ffi-gen.svg)](https://gemnasium.com/paddor/czmq-ffi-gen)
+[![pipeline status](https://gitlab.com/paddor/czmq-ffi-gen/badges/master/pipeline.svg)](https://gitlab.com/paddor/czmq-ffi-gen/commits/master)
 
 # Generated CZMQ::FFI
 
@@ -15,14 +14,13 @@ anything you want. :-)
 This is generated code. It is generated from the API models in CZMQ using
 [zproject](https://github.com/zeromq/zproject). It doesn't feel like Ruby. It's
 not intended to be used directly. Instead, use
-[CZTop](https://github.com/paddor/cztop), or write your own wrapper for this
+[CZTop](https://gitlab.com/paddor/cztop), or write your own wrapper for this
 library.
 
 ### Generated code isn't actually in this repository
-The actual generated code lies in CZMQ, which is Git submodule of this
-repository, registered under `vendor/czmq`.
-
-So if you're not happy with any of the generated code, go have a closer look at
+The actual generated code lies in CZMQ, which is a Git submodule of this
+repository, registered under `vendor/czmq`. So if you're not happy with any of
+the generated code, go have a closer look at
 [CZMQ](https://github.com/zeromq/czmq) (or
 [zproject](https://github.com/zeromq/zproject), which is used by CZMQ to
 generate the low-level binding).
@@ -30,7 +28,7 @@ generate the low-level binding).
 ### API Documentation
 For that same reason, API documentation of unreleased code (directly off this
 repository), like
-[rubydoc.info/github/paddor/czmq-ffi-gen](http://www.rubydoc.info/github/paddor/czmq-ffi-gen)
+[rubydoc.info/github/paddor/czmq-ffi-gen](http://www.rubydoc.info/gitlab/paddor/czmq-ffi-gen)
 **does NOT include any of the generated code**. _Rubydoc.info_ doesn't check
 out Git submodules as part of its documentation procedure.
 
@@ -44,16 +42,14 @@ for the API documentation **for the released gem**.
 
 ## Requirements
 
-* CZMQ >= 4.0
-* ZMQ >= 4.0
+* CZMQ >= 4.1
+* ZMQ >= 4.2
 
 For security mechanisms like CURVE, you can use an external library:
 * [libsodium](https://github.com/jedisct1/libsodium)
 
-On OSX using homebrew, run:
+On macOS using homebrew, run:
 
-    $ brew install libsodium
-    $ brew install zmq --with-libsodium
     $ brew install czmq
 
 If you're running Linux, go check [this page](http://zeromq.org/distro:_start)
@@ -61,19 +57,12 @@ to get more help. Make sure to install CZMQ, not only ZMQ.
 
 ### Supported Rubies
 
-See [.travis.yml](https://github.com/paddor/czmq-ffi-gen/blob/master/.travis.yml)
-for a list of Ruby versions against which czmq-ffi-gen is tested.
+The latest MRI (currently the 2.6 series) is tested on CI.
 
-At the time of writing, these include:
+The following *SHOULD* work, but are untested:
+* Rubinius
+* JRuby 9000
 
-* MRI 2.3, 2.2.4, 2.1.8
-* Rubinius (HEAD)
-* JRuby 9000 (HEAD)
-
-#### Known NOT to work
-
-* JRuby 1.7.x and MRI < 2.0
-  * doesn't work because of the use of the double splat operator (`**opts`)
 
 ## Installation
 
@@ -93,7 +82,7 @@ Or install it yourself as:
 
 ## Usage
 
-Check out [CZTop](https://github.com/paddor/cztop) or the API documentation to
+Check out [CZTop](https://gitlab.com/paddor/cztop) or the API documentation to
 see how this project can be used. :-)
 
 ## Development
@@ -106,4 +95,4 @@ prompt that will allow you to experiment.
 
 The gem is available as open source under the terms of the [ISC
 License](http://opensource.org/licenses/ISC).  See the
-[LICENSE](https://github.com/paddor/cztop/blob/master/LICENSE) file.
+[LICENSE](https://gitlab.com/paddor/cztop/blob/master/LICENSE) file.
