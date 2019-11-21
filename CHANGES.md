@@ -2,6 +2,7 @@
 -----
 * relax gem dependencies
 * update CZMQ low-level binding
+* remove support for CZMQ 3
 
 0.15.0 (03/04/2018)
 -----
