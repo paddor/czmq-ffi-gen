@@ -1,6 +1,10 @@
 require_relative "spec_helper"
 
 describe CZMQ::FFI::LibZMQ do
+  it "has a VERSION" do
+    assert_match /^\d+\.\d+\.\d+$/, CZMQ::FFI::LibZMQ::VERSION
+  end
+
   describe ".zmq_errno" do
     it "has function attached" do
       assert_respond_to CZMQ::FFI::LibZMQ, :zmq_errno

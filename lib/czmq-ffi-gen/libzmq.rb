@@ -19,6 +19,12 @@ module CZMQ::FFI::LibZMQ
   attach_function :zmq_has, [:pointer], :int, **opts
 
 
+  # get ZMQ version
+  ptrs = Array.new(3) { ::FFI::MemoryPointer.new(:int) }
+  zmq_version(*ptrs)
+  VERSION = ptrs.map { |n| n.get_int(0) }.join(".").freeze
+
+
   # @param capability [Symbol, String] the name of the capability
   # @return [Boolean] whether the capability is supported
   #
