@@ -13,6 +13,8 @@ jobs:
         ruby-version: 3.0.0
     - name: Install CZMQ
       run: sudo apt install libczmq-dev
+    - name: Check out CZMQ git submodule
+      run: git submodule update --init -- vendor/czmq
     - name: Run the default task
       run: |
         gem install bundler -v 2.2.3
