@@ -1,4 +1,4 @@
-[![pipeline status](https://gitlab.com/paddor/czmq-ffi-gen/badges/master/pipeline.svg)](https://gitlab.com/paddor/czmq-ffi-gen/commits/master)
+![Specs status](https://github.com/paddor/czmq-ffi-gen/workflows/Specs/badge.svg)
 
 # Generated CZMQ::FFI
 
@@ -42,26 +42,12 @@ for the API documentation **for the released gem**.
 
 ## Requirements
 
-* CZMQ >= 4.1
-* ZMQ >= 4.2
+* CZMQ >= 4.2
+* ZMQ >= 4.3
 
-For security mechanisms like CURVE, you can use an external library:
-* [libsodium](https://github.com/jedisct1/libsodium)
-
-On macOS using homebrew, run:
+On macOS using Homebrew, run:
 
     $ brew install czmq
-
-If you're running Linux, go check [this page](http://zeromq.org/distro:_start)
-to get more help. Make sure to install CZMQ, not only ZMQ.
-
-### Supported Rubies
-
-The latest MRI (currently the 2.6 series) is tested on CI.
-
-The following *SHOULD* work, but are untested:
-* Rubinius
-* JRuby 9000
 
 
 ## Installation
