@@ -1,3 +1,9 @@
+1.0.0 (01/08/2021)
+-----
+* modernized project
+* updated CZMQ low-level binding
+* removed CZMQ::FFI::LIBRARY_VERSION
+
 0.16.1 (11/20/2019)
 -----
 * relax gem dependencies
