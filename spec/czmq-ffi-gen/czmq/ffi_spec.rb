@@ -5,9 +5,6 @@ describe CZMQ::FFI do
     refute_nil CZMQ::FFI::VERSION
     refute_nil CZMQ::FFI::CZMQ_VERSION
     assert_same CZMQ::FFI::CZMQ_VERSION, CZMQ::FFI::VERSION
-
-    # backwards compatibility
-    assert_same CZMQ::FFI::CZMQ_VERSION, CZMQ::FFI::LIBRARY_VERSION
   end
 
   it 'has a gem version number' do
