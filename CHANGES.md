@@ -1,3 +1,7 @@
+1.1.0.pre1 (10/17/2022)
+-----
+* updated CZMQ low-level binding
+
 1.0.0 (01/08/2021)
 -----
 * modernized project
