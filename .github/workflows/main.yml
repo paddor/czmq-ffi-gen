@@ -10,7 +10,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.0.4
+        ruby-version: 3.3.0
     - name: Install CZMQ
       run: sudo apt install libczmq-dev
     - name: Check out CZMQ git submodule
