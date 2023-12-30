@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Generated low-level Ruby binding for CZMQ}
   spec.homepage      = "https://rubygems.org/gems/czmq-ffi-gen"
   spec.license       = "ISC"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.5.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 3.0.0")
 
   spec.metadata["homepage_uri"]    = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/paddor/czmq-ffi-gen"
