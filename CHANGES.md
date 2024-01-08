@@ -1,3 +1,12 @@
+1.1.1 (01/08/2024)
+-----
+* use MSYS2 for Windows support
+
+1.1.0 (12/30/2023)
+-----
+* require Ruby 3.0
+* updated CZMQ low-level binding
+
 1.1.0.pre1 (10/17/2022)
 -----
 * updated CZMQ low-level binding
