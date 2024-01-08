@@ -33,4 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 3.10"
   spec.add_development_dependency "minitest" # assertions
+
+  spec.metadata["msys2_mingw_dependencies"] = "czmq"
 end
