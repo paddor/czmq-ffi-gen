@@ -1,0 +1,33 @@
+{
+  "lib/czmq-ffi-gen/czmq_ffi_extensions.rb": {
+    "alternate": "spec/czmq-ffi-gen/czmq/ffi/czmq_ffi_extensions_spec.rb"
+  },
+  "lib/czmq-ffi-gen/errors.rb": {
+    "alternate": "spec/czmq-ffi-gen/czmq/ffi/errors_spec.rb"
+  },
+  "lib/czmq-ffi-gen/libzmq.rb": {
+    "alternate": "spec/czmq-ffi-gen/czmq/ffi/libzmq_spec.rb"
+  },
+  "lib/czmq-ffi-gen/signals.rb": {
+    "alternate": "spec/czmq-ffi-gen/czmq/ffi/signals_spec.rb"
+  },
+  "lib/*.rb": {
+    "alternate": "spec/czmq-ffi-gen/{}_spec.rb"
+  },
+  "spec/czmq-ffi-gen/czmq/ffi/czmq_ffi_extensions_spec.rb": {
+    "alternate": "lib/czmq-ffi-gen/czmq_ffi_extensions.rb"
+  },
+  "spec/czmq-ffi-gen/czmq/ffi/errors_spec.rb": {
+    "alternate": "lib/czmq-ffi-gen/errors.rb"
+  },
+  "spec/czmq-ffi-gen/czmq/ffi/libzmq_spec.rb": {
+    "alternate": "lib/czmq-ffi-gen/libzmq.rb"
+  },
+  "spec/czmq-ffi-gen/czmq/ffi/signals_spec.rb": {
+    "alternate": "lib/czmq-ffi-gen/signals.rb"
+  },
+  "spec/*_spec.rb": {
+    "alternate": "lib/{}.rb",
+    "dispatch": "bundle exec rspec -ff {file}"
+  }
+}
