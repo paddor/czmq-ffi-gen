@@ -1,8 +1,6 @@
 module CZMQ
   module FFI
 
-    attach_function :zsys_handler_set, [:pointer], :void, blocking: true
-
     # This is used to disable CZMQ's signal handling so blocking calls can be
     # interrupted using Ctrl-C.
     module Signals

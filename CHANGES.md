@@ -1,3 +1,7 @@
+next
+-----
+* avoid warnings from FFI
+
 1.1.1 (01/08/2024)
 -----
 * use MSYS2 for Windows support
