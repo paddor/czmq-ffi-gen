@@ -1,4 +1,4 @@
-next
+1.1.2 (01/10/2024)
 -----
 * avoid warnings from FFI
 
