@@ -27,7 +27,7 @@ describe CZMQ::FFI::Zsock do
       end
 
       it 'returns the FD' do
-        sock = described_class.new_server(endpoint)
+        sock = described_class.new_req(endpoint)
         fd = described_class.fd(sock)
         assert_kind_of Integer, fd
         IO.for_fd fd
