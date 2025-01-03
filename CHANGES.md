@@ -1,3 +1,9 @@
+1.2.0 (01/3/2025)
+-----
+* updated CZMQ low-level binding
+* find libczmq/libzmq in /usr/lib and respect LD_LIBRARY_PATH
+* add gem mutex_m as dependency to fix specs on Ruby 3.4
+
 1.1.2 (01/10/2024)
 -----
 * avoid warnings from FFI
