@@ -7,6 +7,11 @@ describe CZMQ::FFI do
     assert_same CZMQ::FFI::CZMQ_VERSION, CZMQ::FFI::VERSION
   end
 
+  it 'is able to load CZMQ' do
+    assert_operator CZMQ::FFI, :available?
+    # p CZMQ::FFI.ffi_libraries
+  end
+
   it 'has a gem version number' do
     refute_nil CZMQ::FFI::GEM_VERSION
   end

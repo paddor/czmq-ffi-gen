@@ -20,5 +20,18 @@ describe CZMQ::FFI::Zsock do
       sock = described_class.new_req(endpoint)
       refute_operator sock, :null?
     end
+
+    describe '.fd' do
+      before do
+        assert_equal 0, CZMQ::FFI::Errors.errno
+      end
+
+      it 'returns the FD' do
+        sock = described_class.new_server(endpoint)
+        fd = described_class.fd(sock)
+        assert_kind_of Integer, fd
+        IO.for_fd fd
+      end
+    end
   end
 end
